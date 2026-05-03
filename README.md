@@ -27,6 +27,7 @@ Accuracy hides class imbalance and error types. In medical plants, misclassifyin
 5. Which model had the best F1-Score? What does it indicate?
 good_model (0.9876) — Excellent balance between Precision (0.9957) and Recall (0.9800). Near-perfect harmonic mean, suitable for deployment.
 6. How did Precision and Recall differ across models?
+
 | Model           | Precision  | Recall     | Interpretation     |
 | --------------- | ---------- | ---------- | ------------------ |
 | ResNet50        | 0.0964     | 0.1790     | Random guessing    |

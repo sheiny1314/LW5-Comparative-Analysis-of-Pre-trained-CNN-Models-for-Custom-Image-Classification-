@@ -1,3 +1,7 @@
+Good Model link: https://colab.research.google.com/drive/1HYsY-0_53eXkcnU7HK8LGQIO-sqPtJCl?authuser=1#scrollTo=406_w-Z6MfW3
+
+LW5 link : https://colab.research.google.com/drive/1tZeewcltL4VpfzNWPH5hceVISqwYzNNB?authuser=1#scrollTo=cNnJL4XtVLiD
+
 # LW5-Comparative-Analysis-of-Pre-trained-CNN-Models-for-Custom-Image-Classification-
 
 📊 Performance Comparison Table

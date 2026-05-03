@@ -37,25 +37,35 @@ good_model (0.9876) — Excellent balance between Precision (0.9957) and Recall 
 
 
 C. Confusion Matrix Analysis
+
 7. Which classes were frequently misclassified?
 Morphologically similar plants (e.g., Lantana camara vs Globe Amaranth) and classes with fewer samples (Muskmelon: 243 images). The "Test" artifact class (2 images) should be removed.
+
 8. What patterns did you observe?
 Strong diagonal dominance (correct classifications), sparse off-diagonal (few errors), and minor confusion clusters between visually similar species.
 D. ROC and AUC
 9. Which model had the highest AUC score?
 good_model (0.9995), followed by Teachable Machine (0.9989).
+
 10. What does AUC tell us?
 AUC measures discriminative ability across all thresholds. 0.9995 means 99.95% probability of correctly ranking a positive vs negative sample — near-perfect class separability.
+
 E. Explainability (Grad-CAM)
+
 11. What did Grad-CAM reveal?
 MobileNetV2 focused on leaf textures, veins, and flower structures — relevant botanical features. ResNet50 had scattered attention. EfficientNetB0 showed no meaningful focus.
+
 12. Did the model focus on relevant regions?
 Yes — good_model localized on leaf margins, petal arrangements, and stem textures while avoiding background noise.
+
 13. Which model produced the most meaningful heatmaps?
 MobileNetV2 (good_model) — Clear, consistent localization on discriminative plant parts with confidence-correlated intensity.
+
 F. Model Comparison & Improvement
+
 14. Which model for deployment? Why?
 good_model (Fine-tuned MobileNetV2) — 98% accuracy, 0.9876 F1, 0.9995 AUC, ~14MB size, fast inference, and interpretable Grad-CAM.
+
 15. How to further improve?
 Data augmentation (rotation, zoom, brightness)
 Class balancing (weighted loss for Muskmelon)
@@ -63,11 +73,15 @@ Ensemble with EfficientNetB3
 Unfreeze 30-40 layers instead of 20
 Remove "Test" artifact class
 Test-time augmentation
+
 G. Real-World Application
+
 16. Real-world applications?
 Mobile app for farmers, educational tool for students, pharmaceutical screening, conservation monitoring, and integration with your EcoTrack IoT system.
+
 17. Risks of inaccurate deployment?
 Toxic misidentification (poisoning), economic loss (ineffective remedies), legal liability, ecosystem damage, and user trust erosion.
+
 18. Mobile/web app integration?
 
 [Camera] → [224×224 Preprocessing] → [TensorFlow Lite] → [Prediction + Grad-CAM]
